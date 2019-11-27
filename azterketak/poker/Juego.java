@@ -3,6 +3,12 @@ package packPoker;
 import java.util.ArrayList;
 import java.util.Stack;
 
+public class Pago {
+	int pagador;
+	int cobrador;
+	int cantidad;
+}
+
 public class Juego {
 	   
     public int jugar(int nJugadores,
@@ -17,21 +23,12 @@ public class Juego {
     //                 del jugador 0 al acabar la partida
 
     	Stack<Boolean>[] dinero = (Stack<Boolean>[]) new Stack[nJugadores];
-    	
-        // COMPLETAR CÓDIGO
 
-
-
-
-
-
-
-
-
-
-
-
-
+		Iterator<Pago> itr = pagos.itr();
+		Pago unekoa = null;
+		while(itr.hasNext()) {
+			unekoa = itr.next();
+		}
     	
     	return billetesVerdaderos;
     }
