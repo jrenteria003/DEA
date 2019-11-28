@@ -23,11 +23,21 @@ public class Juego {
     //                 del jugador 0 al acabar la partida
 
     	Stack<Boolean>[] dinero = (Stack<Boolean>[]) new Stack[nJugadores];
+		for(int i = 0; i < nJugadores; i++) {
+			dinero[i] = nBilletesInicial;
+		}
+		int billetesVerdaderos = 0;
 
 		Iterator<Pago> itr = pagos.itr();
 		Pago unekoa = null;
 		while(itr.hasNext()) {
 			unekoa = itr.next();
+			dinero[unekoa.cobrador].push(dinero[unekoa.pagador].pop(unekoa.cantidad);
+			if(unekoa.cobrador == 0) {
+				billetesVerdaderos = billetesVerdaderos + unekoa.cantidad;
+			}
+			if(unekoa.pagador == 0) {
+				billetesVerdaderos = billetesVerdaderos - unekoa.cantidad;
 		}
     	
     	return billetesVerdaderos;
