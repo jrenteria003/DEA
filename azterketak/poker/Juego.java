@@ -32,12 +32,13 @@ public class Juego {
 		Pago unekoa = null;
 		while(itr.hasNext()) {
 			unekoa = itr.next();
-			dinero[unekoa.cobrador].push(dinero[unekoa.pagador].pop(unekoa.cantidad);
+			dinero[unekoa.cobrador].push(dinero[unekoa.pagador].pop(unekoa.cantidad));
 			if(unekoa.cobrador == 0) {
 				billetesVerdaderos = billetesVerdaderos + unekoa.cantidad;
 			}
 			if(unekoa.pagador == 0) {
 				billetesVerdaderos = billetesVerdaderos - unekoa.cantidad;
+			}
 		}
     	
     	return billetesVerdaderos;

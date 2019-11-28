@@ -24,6 +24,10 @@ public class Portua {
 		//Nasak sortu
 		nasak = new Stack<String>()[nasaKop];
 
+		for(int i = 0; i < nasaKop; i++) {
+			nasak[i] = new Stack<String>();
+		}
+
 		//Portuaren jarduera simulatu
 		while(ontziak.peek() == null) {
 			Ontzia unekoOntzia = ontziak.poll();
