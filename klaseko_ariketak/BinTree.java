@@ -86,4 +86,66 @@ public class BinTree<T> implements TADBinaryTree<T> {
 		return emaitza.iterator();
 	}
 
+	public T findMin() {
+		//aurre	: zuhaitz ez hutsa
+		return findMin(this.root);
+	}
+
+	//	------------------------------------
+	//	a			           | emaitza
+	//	------------------------------------
+	//	        (20) 	       | 20
+	//	------------------------------------
+	//	        (20)   	       |
+	//       (15)  (35)	       | 8
+	//	   (8) (18)            |
+	//	------------------------------------
+	//	        (20)           | 
+	//	          (25)         | 20
+	//	            (90)       |
+	//	------------------------------------
+	//	        (20)           | 
+	//	      (12)             | 8
+	//	     (8)               | 
+	//	------------------------------------
+
+	private T findMin(BinTreeNode<T> a) {
+		//Denbora	: O(log_2 n)
+		//Espazioa	: O(log_2 n)
+		if (a.left == null) {
+			return a.elem;
+		}
+		else return findMin(a.left);
+	}
+
+	public T findMinItr() {
+		//bertsio iteratiboa
+		BinTreeNode<T> unekoa = root;
+		while(unekoa.left != null) {
+			unekoa = unekoa.left;
+		}
+		return unekoa.elem;
+	}
+
+	public T removeMinItr() {
+		if(root.left == null) {
+			T elementua = root.elem;
+			root = root.right;
+			count = 0;
+			return elementua;
+		} else {
+			BinTreeNode<T> gurasoa = root;
+			BinTreeNode<T> unekoa = root;
+			while (unekoa.left != null) {
+				gurasoa = unekoa;
+				unekoa = unekoa.left;
+			}
+			gurasoa.left = unekoa.right;
+			count--;
+			return unekoa.elem;
+		}
+	}
+
+	
+
 }
