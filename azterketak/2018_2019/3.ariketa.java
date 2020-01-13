@@ -15,7 +15,7 @@ public class ZuhaitzGenealogikoa {
 			HashMap<String,String> herriak) {
 		BinaryTreeNode<Pertsona> adabg =
 			unekoaAdabegia(izena, this.root);
-		return bizkaitarPetoPetoaDa(adabg, herriak);
+		return bizkaitarPetoPetoaDa(adabg, herriak, true);
 	}
 
 	private boolean bizkaitarPetoPetoaDa(BinaryTreeNode<Pertsona>
